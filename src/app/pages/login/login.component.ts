@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         this.form.get('password').value))
       .subscribe((resp) => {
         Swal.close();
-        console.log(resp);
+        localStorage.setItem('token', resp['idToken']);
         this.router.navigateByUrl('/home')
       }, (err) => {
         Swal.close();
