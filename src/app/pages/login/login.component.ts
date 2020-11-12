@@ -55,13 +55,12 @@ export class LoginComponent implements OnInit {
     Swal.showLoading();
 
     this.authService
-      .login(new UserModel(undefined,
-        this.form.get('email').value,
-        this.form.get('password').value))
+      .login(this.form.value)
       .subscribe((resp) => {
         Swal.close();
         localStorage.setItem('token', resp['idToken']);
-        this.router.navigateByUrl('/home')
+        //this.router.navigateByUrl('/home');
+        this.router.navigate(['/home']);
       }, (err) => {
         Swal.close();
         console.log(err);

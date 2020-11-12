@@ -61,9 +61,7 @@ export class SignInComponent implements OnInit {
     Swal.showLoading();
 
     this.authService
-      .signIn(new UserModel(this.form.get('name').value,
-        this.form.get('email').value,
-        this.form.get('password').value))
+      .signIn(this.form.value)
       .subscribe((resp) => {
         Swal.close();
         console.log(resp);

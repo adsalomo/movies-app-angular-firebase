@@ -12,7 +12,7 @@ export class AuthService {
 
   }
 
-  login(user: UserModel) {
+  login(user: any) {
     const authData = {
       email: user.email,
       password: user.password,
@@ -25,7 +25,7 @@ export class AuthService {
     );
   }
 
-  signIn(user: UserModel) {
+  signIn(user: any) {
     const authData = {
       email: user.email,
       password: user.password,
